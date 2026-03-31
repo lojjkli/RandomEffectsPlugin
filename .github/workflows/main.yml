@@ -14,8 +14,11 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Download Spigot API
-        run: curl -L "https://repo.papermc.io/repository/maven-public/org/spigotmc/spigot-api/1.21.4-R0.1-SNAPSHOT/spigot-api-1.21.4-R0.1-SNAPSHOT-shaded.jar" -o spigot-api.jar
+      - name: Download Bukkit API
+        run: curl -L "https://repo.maven.apache.org/maven2/org/bukkit/bukkit/1.21.1-R0.1-SNAPSHOT/bukkit-1.21.1-R0.1-SNAPSHOT.jar" -o spigot-api.jar
+
+      - name: Check jar
+        run: ls -lh spigot-api.jar && file spigot-api.jar
 
       - name: Compile
         run: mkdir -p classes && javac -cp spigot-api.jar -d classes RandomEffectsPlugin.java
