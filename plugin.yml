@@ -1,0 +1,48 @@
+name: RandomEffectsPlugin
+version: 1.0.0
+main: com.example.randomeffects.RandomEffectsPlugin
+api-version: 1.21
+description: Assigns random potion effect roles to players with kill/death progression.
+author: YourName
+
+commands:
+  rollroles:
+    description: Roll a random role for all currently online players (one-time only).
+    usage: /rollroles
+    permission: randomeffects.rollroles
+
+  rollrole:
+    description: Roll a random role for a single player (for late joiners).
+    usage: /rollrole <playername>
+    permission: randomeffects.rollrole
+
+  rerollrole:
+    description: Re-roll and reset a specific player's role.
+    usage: /rerollrole <playername>
+    permission: randomeffects.rerollrole
+
+  checkrole:
+    description: Check your own or another player's current role.
+    usage: /checkrole [playername]
+    permission: randomeffects.checkrole
+
+permissions:
+  randomeffects.rollroles:
+    description: Allows using /rollroles
+    default: op
+
+  randomeffects.rollrole:
+    description: Allows using /rollrole <player>
+    default: op
+
+  randomeffects.rerollrole:
+    description: Allows using /rerollrole <player>
+    default: op
+
+  randomeffects.checkrole:
+    description: Allows /checkrole on yourself
+    default: true
+
+  randomeffects.checkrole.others:
+    description: Allows /checkrole on other players
+    default: op
